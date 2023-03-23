@@ -1,0 +1,33 @@
+img{
+    width: 50%;
+}
+ul li {
+    padding: 5px;
+    background: #f4f4f4;
+    margin: 5px 0;
+}
+.container{
+    margin: auto;
+    width: 5000px;
+    overflow: auto;
+}
+
+#my-form{
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+.bg-dark{
+    background: #333;
+    color: #fff;
+}
+.button {
+    background-color: #00c0fa; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
