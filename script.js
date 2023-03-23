@@ -8,3 +8,10 @@ var title= document.querySelector('.title');
 // items[1].textContent="hello-2";
 title.style.fontweight='bold';
 title.style.color='green';
+
+var items= document.getElementsByClassName('list-group-item');
+items[2].style.background='green';
+items[1].style.fontWeight = "900";
+items[0].style.fontWeight = "900";
+items[2].style.fontWeight = "900";
+items[3].style.fontWeight = "900";
