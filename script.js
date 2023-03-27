@@ -25,6 +25,58 @@
 //     li[i].style.background='green';
 // }
 
-var li = document.querySelectorAll('li');
-li[1].style.background='green';
-li[2].style.display='none';
+// var li = document.querySelectorAll('li');
+// li[1].style.background='green';
+// li[2].style.display='none';
+var itemlist = document.querySelector("#items");
+//parent Element
+// console.log(itemlist.parentElement);
+// itemlist.parentElement.style.background='#f4f4f4';
+//Parent node
+// console.log(itemlist.parentNode);
+// itemlist.parentNode.style.background='#f4f4f4';
+
+//child nodes
+// console.log(itemlist.childNodes);
+
+//childrens
+// console.log(itemlist.children);
+// console.log(itemlist.children[1]);
+// itemlist.children[1].style.backgroundColor='red';
+
+// console.log(itemlist.firstChild);
+// console.log(itemlist.firstElementChild);
+// itemlist.firstElementChild.textContent='Hello 1';
+// console.log(itemlist.lastElementChild);
+// itemlist.lastElementChild.textContent='Hello 4';
+// console.log(itemlist.nextSibling);
+// console.log(itemlist.nextElementSibling);
+// console.log(itemlist.previousSibling);
+// console.log(itemlist.previousElementSibling);
+// itemlist.previousElementSibling.style.color='green';
+
+//create element
+// create a div
+var newDiv = document.createElement('div');
+//add class
+newDiv.className='Hello';
+//add id
+newDiv.id= 'hello1';
+//add attr
+newDiv.setAttribute('title', 'Hello Div');
+
+//create text node
+var newDivText = document.createTextNode('Hello World');
+
+// add text in div
+newDiv.appendChild(newDivText);
+
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
+// newDiv.style.fontSize= '30px';
+// container.insertBefore(newDiv,h1);
+// console.log(newDiv);
+// console.log(newitem);
+var li = document.querySelector('li');
+// console.log(li);
+itemlist.insertBefore(newDiv,li);
