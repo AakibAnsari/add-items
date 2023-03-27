@@ -84,20 +84,29 @@
 
 var form= document.getElementById('addForm');
 var itemlist = document.getElementById('items');
+var itemdesc = document.getElementById('discription');
+
+var filter = document.getElementById('filter');
+
 //form submit event
 form.addEventListener('submit', addItem);
 //delete event
 itemlist.addEventListener('click', removeItem);
+//filter event
+filter.addEventListener('keyup', filterItems);
 
 function addItem(e){
     e.preventDefault();
     //get input value
     var newitem = document.getElementById('item').value;
+    var newdesc = document.getElementById('discription').value;
     //add class
     var li = document.createElement('li');
     li.className='list-group-item'
     // console.log(li);
     li.appendChild(document.createTextNode(newitem));
+    // li.appendChild(document.createTextNode('  '));
+    li.appendChild(document.createTextNode(newdesc));
     //create delete button element
     var deletebtn = document.createElement('button');   
     //add button to del
@@ -119,4 +128,28 @@ function removeItem(e){
         }
     }
 
+}
+
+// filter item
+function filterItems(e){
+    //convert to lower text
+    var text = e.target.value.toLowerCase();
+    var items = itemlist.getElementsByTagName('li');
+
+    Array.from(items).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+        var itemDesc = item.childNodes[1].textContent;
+        // console.log(itemName);
+        // console.log(itemDesc);
+        if((itemDesc.toLowerCase().indexOf(text) && itemName.toLowerCase().indexOf(text)) !=-1){
+            item.style.display = 'block';
+        }else{
+            item.style.display= 'none';
+        }
+        // if(itemDesc.toLowerCase().indexOf(text) !=-1){
+        //     item.style.display = 'block';
+        // }else{
+        //     item.style.display= 'none';
+        // }
+    })
 }
